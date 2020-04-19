@@ -1,0 +1,23 @@
+table{
+    margin: auto;
+}
+
+h1{
+    color: darkblue;
+    text-align: center ;
+}
+/* added h1:hover different than original*/
+h1:hover{
+    font-size: 35px;
+    color: crimson;
+}
+
+.vertical {
+    height: 100px;
+    border-right: solid blueviolet 1px;
+}
+.horizontal{
+    width: 100px;
+    border-bottom:solid blueviolet 1px ;
+    border-top: solid blueviolet 1px;
+}

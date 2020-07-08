@@ -1,0 +1,18 @@
+body{
+    background-color: #f5d9d5;
+    font-family: 'Nunito', sans-serif;;
+}
+
+/*navbar brand which is insede of mainnavbar ide*/
+#mainNavbar .navbar-brand{
+    color: red;
+}
+/*To choose every element of id we can get access for all inside of this id */
+#mainNavbar{
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+#mainNavbar .nav-link:hover{
+    color: red;
+}

@@ -1,8 +1,24 @@
 body{
     background-color: #f5d9d5;
     font-family: 'Nunito', sans-serif;;
+
 }
 
+
+.blurb h2{
+    color: red;
+    font-weight: 100;
+    font-size: 2.5rem;
+}
+.blurb p{
+    color: #f498b8;
+    font-weight: 100;
+    font-size: 1.125rem;
+    line-height: 2;
+}
+section{
+    margin-top: 100px;
+}
 /*navbar brand which is insede of mainnavbar ide*/
 #mainNavbar .navbar-brand{
     color: red;

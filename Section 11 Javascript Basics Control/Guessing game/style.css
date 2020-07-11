@@ -3,3 +3,7 @@ h1 {
     text-align: center;
     align-items: center;
 }
+
+h1:hover{
+    color: seagreen;
+}

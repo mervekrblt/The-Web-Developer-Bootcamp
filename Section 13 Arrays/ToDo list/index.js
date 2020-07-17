@@ -1,26 +1,17 @@
+let todos = []
 
-var todos = ["Buy a dog"];
+let input = prompt('What would you like to do?')
 
-var input = prompt("What would you like to do?");
+while(input !== 'quit'){
+    
+    if(input==='list'){
+    console.log(todos)
+}else if(input==='new'){
 
-while (input !== "quit"){
-
-    if (input === "list") {
-
-    console.log(todos);
-
+let  newtodo = prompt('Add new to do')
+todos.push(newtodo)
+}
+  input = prompt('What would you like to do?')
 }
 
-    else if (input === "new") {
-
-  var newtodo = prompt("Enter New Todo");
-
-  todos.push(newtodo);
-
-       }
-       input = prompt("What would you like to do?");
-}
-
-
-
-console.log("Ok, You Quit The App!");   
+console.log('you quit')

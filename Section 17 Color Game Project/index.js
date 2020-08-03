@@ -20,7 +20,7 @@ squares.forEach(function (i, j, ) {
         //compare clickcolor to pickedcolor
         if (clikcedColor === pickedColor) {
             message.textContent = "Correct"
-            changeColors(clickedColor) //implemented
+            changeColors(pickedColor) //implemented
         } else {
             this.style.backgroundColor = "#232323" // fade out color code and this refers to squares
             message.textContent = "Try Again"

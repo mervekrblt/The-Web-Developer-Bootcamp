@@ -1,15 +1,12 @@
-let colors = ["rgb(255, 0, 0)",
-    "rgb(255, 255, 0)",
-    "rgb(0, 255, 0)",
-    "rgb(0, 255, 255)",
-    "rgb(0, 0, 255)",
-    "rgb(255, 0, 255)"
-]
+let colors = generateRandomColors(6)
 
 let squares = document.querySelectorAll('.square')
-const pickedColor = colors[3]
+const pickedColor = pickColor()
 const colorDisplay = document.querySelector('#colorDisplay')
 const message = document.querySelector('#message')
+
+
+colorDisplay.textContent = pickedColor
 
 squares.forEach(function (i, j, ) {
     i.style.backgroundColor = colors[j] //i refers to individual squares and j refers to index of colors(numbers) you cannot write squares[i].style.backgroundColor = colors[i]
@@ -19,8 +16,7 @@ squares.forEach(function (i, j, ) {
     i.addEventListener('click', function () {
         //this refers to a square which I click and clickedColor says its rgb
         let clikcedColor = this.style.backgroundColor
-        console.log(clikcedColor)
-
+        
         //compare clickcolor to pickedcolor
         if (clikcedColor === pickedColor) {
             message.textContent = "Correct"
@@ -38,3 +34,10 @@ function changeColor(color){  // write this code first and implement this into i
         i.style.backgroundColor = color
     })
 }
+
+//pick one rgb array i.e. [15,456,85], it is called pickedColor
+function pickColor(){
+    let random = Math.floor(Math.random()*colors.length) // this code helps to generate number 1 to 6
+    return colors[random] // and with this code you can use randomly array 1 to 6
+}
+

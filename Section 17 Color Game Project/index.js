@@ -59,7 +59,7 @@ resetButton.addEventListener("click", function(){
     squares.forEach(function (i, j, ) {
         i.style.backgroundColor = colors[j]
     })
-    h1.style.backgroundColor = "#232323"  // when click the button h1 color returns to normal
+    h1.style.backgroundColor = "steelblue"  // when click the button h1 color returns to normal
 })
 
 

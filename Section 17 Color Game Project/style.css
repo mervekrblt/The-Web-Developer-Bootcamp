@@ -4,10 +4,13 @@
     padding-bottom: 30%;
     float: left;
     margin: 1.66%;
+    border-radius: 50%;
 }
 
 body{
     background-color: #232323;
+    margin: 0;
+    font-family:"Montserrat", "Avenir";
 }
 
 #container{
@@ -17,6 +20,13 @@ body{
 
  h1{
     color: white;
+    text-align: center;
+    background-color: steelblue;
+    margin: 0;
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: 1.1;
+    padding: 20px 0;
 } 
 
 #message{
@@ -32,4 +42,31 @@ body{
 
 .selected{
     background-color: blue;
+}
+
+#colorDisplay{
+    font-size: 200%;
+}
+
+button{
+    border: none;
+    border-block: none;
+    background: none;
+    text-transform: uppercase;
+    height: 100%;
+    font-weight: 700;
+    color: steelblue;
+    letter-spacing: 1px;
+    font-size-adjust: inherit;
+    transition: all 0.5s;
+}
+
+#message{
+    display: inline-block;
+    width: 20%;
+}
+
+button:hover{
+    color: white;
+    background: steelblue;
 }

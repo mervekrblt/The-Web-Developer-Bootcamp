@@ -1,16 +1,83 @@
 var numSquares =6
-let colors = generateRandomColors(numSquares)
+let colors = []
+let pickedColor;
 
 let squares = document.querySelectorAll('.square');
-let pickedColor = pickColor();
 let colorDisplay = document.querySelector('#colorDisplay');
 let message = document.querySelector('#message');
 let h1 = document.querySelector("h1")
 let resetButton = document.querySelector("#reset")
-let easyBtn = document.querySelector("#easyBtn")
-let hardBtn = document.querySelector("#hardBtn")
+let modeButtons = document.querySelectorAll(".mode")
 
-easyBtn.addEventListener("click", function(){
+init();
+
+function init(){
+
+    for(let i=0; i< modeButtons.length;i++){
+        modeButtons[i].addEventListener('click', function(){
+            modeButtons[0].classList.remove("selected")
+            modeButtons[1].classList.remove("selected")
+            this.classList.add("selected")
+
+            this.textContent==="Easy" ? numSquares = 3: numSquares = 6;
+            reset()
+        })
+
+        reset()
+    }
+
+    squares.forEach(function (i, j, ) {
+        i.style.backgroundColor = colors[j] //i refers to individual squares and j refers to index of colors(numbers) you cannot write squares[i].style.backgroundColor = colors[i]
+    
+    
+        //add click listeners to squares
+        i.addEventListener('click', function () {
+            //this refers to a square which I click and clickedColor says its rgb
+            let clikcedColor = this.style.backgroundColor
+            
+            //compare clickcolor to pickedcolor
+            if (clikcedColor === pickedColor) {
+                message.textContent = "Correct"
+                changeColors(pickedColor) //implemented
+                h1.style.backgroundColor=pickedColor
+                resetButton.textContent = "Play Again"
+            } else {
+                this.style.backgroundColor = "#232323" // fade out color code and this refers to squares
+                message.textContent = "Try Again"
+            }
+        })
+    })
+}
+
+
+
+function reset(){
+
+    //generate all new colors
+    colors = generateRandomColors(numSquares)
+    // pick a new random color from array
+    pickedColor = pickColor()
+    //change colorDisplay
+    colorDisplay.textContent = pickedColor
+
+    message.textContent ="";
+    resetButton.textContent ="New Colors"
+
+    //change colors of squares
+    for(let i=0; i<squares.length; i++) {
+        
+        if(colors[i]){
+            squares[i].style.display = "block"
+            squares[i].style.backgroundColor = colors[i]
+        }else{
+            squares[i].style.display ="none"
+        }
+    }
+    h1.style.backgroundColor = "steelblue"  // when click the button h1 color returns to normal
+    
+}
+
+/*easyBtn.addEventListener("click", function(){
     easyBtn.classList.add("selected");
     hardBtn.classList.remove("selected");
     numSquares =3;
@@ -47,45 +114,32 @@ hardBtn.addEventListener("click", function(){
     }
 
 })
+*/
 
 resetButton.addEventListener("click", function(){
-    //generate all new colors
+    reset();
+    /*//generate all new colors
     colors = generateRandomColors(numSquares)
     // pick a new random color from array
     pickedColor = pickColor()
     //change colorDisplay
     colorDisplay.textContent = pickedColor
+
+    message.textContent ="";
+    this.textContent ="New Colors"
+
     //change colors of squares
     squares.forEach(function (i, j, ) {
         i.style.backgroundColor = colors[j]
     })
     h1.style.backgroundColor = "steelblue"  // when click the button h1 color returns to normal
+    */
 })
 
 
-colorDisplay.textContent = pickedColor
-
-squares.forEach(function (i, j, ) {
-    i.style.backgroundColor = colors[j] //i refers to individual squares and j refers to index of colors(numbers) you cannot write squares[i].style.backgroundColor = colors[i]
+//colorDisplay.textContent = pickedColor
 
 
-    //add click listeners to squares
-    i.addEventListener('click', function () {
-        //this refers to a square which I click and clickedColor says its rgb
-        let clikcedColor = this.style.backgroundColor
-        
-        //compare clickcolor to pickedcolor
-        if (clikcedColor === pickedColor) {
-            message.textContent = "Correct"
-            changeColors(pickedColor) //implemented
-            h1.style.backgroundColor=pickedColor
-            resetButton.textContent = "Play Again"
-        } else {
-            this.style.backgroundColor = "#232323" // fade out color code and this refers to squares
-            message.textContent = "Try Again"
-        }
-    })
-})
 
 
 function changeColors(color){  // write this code first and implement this into if else statement

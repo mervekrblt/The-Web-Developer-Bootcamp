@@ -5,6 +5,9 @@
     float: left;
     margin: 1.66%;
     border-radius: 50%;
+    transition: background 0.6s;
+    -webkit-transtion: background 0.6s ;/*for safari*/
+    -moz-transtion: background 0.6s; /*for mozilla*/
 }
 
 body{
@@ -15,7 +18,7 @@ body{
 
 #container{
     max-width: 600px;
-    margin: auto;
+    margin: 20px auto;
 }
 
  h1{
@@ -59,6 +62,9 @@ button{
     letter-spacing: 1px;
     font-size-adjust: inherit;
     transition: all 0.5s;
+    -webkit-transtion: all 0.5s; /*for safari*/
+    -moz-transtion: all 0.5s; /*for mozilla*/
+    outline: none;
 }
 
 #message{
